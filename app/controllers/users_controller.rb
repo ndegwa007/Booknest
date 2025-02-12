@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action: authenticate_user!, only: [:borrowed_books, :return_book]
+  before_action :authenticate_user!, only: [:borrowed_books, :return_book]
   # show the registration form
   def new
     @user = User.new
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   end
 
   def borrowed_books
-    @borrowed_books = current_user.borrowed_books.where('borrowings.due_date > ?', Time.current)
+    @borrowed_books = current_user.borrowed_books.joins(:borrowings).merge(Borrowing.active)
   end
 
   def return_book

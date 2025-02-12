@@ -11,7 +11,7 @@ class BooksController < ApplicationController
     borrowing  = current_user.borrowings.new(book: @book)
 
     if borrowing.save
-      redirect_to user_borrowed_books_path(current_user), notice: 'Book borrowed successfully'
+      redirect_to borrowed_books_user_path(current_user), notice: 'Book borrowed successfully'
     
     else
       redirect_to book_path, alert: borrowing.errors.full_messages.join(', ')

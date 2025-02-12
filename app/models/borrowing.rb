@@ -3,6 +3,8 @@ class Borrowing < ApplicationRecord
   belongs_to :user
   belongs_to :book
 
+  scope :active, -> { where('due_date > ?', Time.current) }
+
   # Ensure a book cannot be borrowed more than once
   validates :book_id, uniqueness: { scope: :user_id, message: 'is already borrowed by you' }
 

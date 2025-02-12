@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
   # Users routes
   resources :users, only: [] do
-    get 'borrowed_books', on: :menber
+    get 'borrowed_books', on: :member, as: 'borrowed_books'
     delete 'return_book/:id', to: 'users#return_book', as: 'return_book', on: :member
   end
 end
