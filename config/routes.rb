@@ -1,5 +1,6 @@
 # config/routes.rb
 Rails.application.routes.draw do
+  get "pages/home"
   get "sessions/new"
   get "sessions/create"
   get "sessions/destroy"
@@ -13,5 +14,5 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy', as: 'logout' # Destroy session (log out)
 
   # Root route
-  root 'books#index' 
+  root 'pages#home' # landing page
 end

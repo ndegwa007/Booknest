@@ -1,0 +1,19 @@
+<div class="landing-page">
+  <h1>Welcome to BookNest</h1>
+  <p class="welcome-message">
+    Your cozy digital library for borrowing and sharing books effortlessly. 
+    Discover new reads, lend your favorites, and build a community of book lovers—all in one place. 
+    Nestle in and start your reading journey today!
+  </p>
+  <p class="happy-reading">Happy Reading! 📖💙</p>
+
+  <!-- Call to Action Buttons -->
+  <div class="cta-buttons">
+    <% unless current_user %>
+      <%= link_to 'Sign Up', signup_path, class: 'cta-button' %>
+      <%= link_to 'Log In', login_path, class: 'cta-button' %>
+    <% else %>
+      <%= link_to 'Browse Books', books_path, class: 'cta-button' %>
+    <% end %>
+  </div>
+</div>

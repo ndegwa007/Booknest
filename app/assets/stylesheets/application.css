@@ -1,10 +1,107 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
+/* app/assets/stylesheets/application.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .navbar-brand .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .navbar-links .nav-link {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+  }
+  
+  .navbar-links .nav-link:hover {
+    text-decoration: underline;
+  }
+  
+  .flash {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+  }
+  
+  .flash.notice {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .flash.alert {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+  .landing-page {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .landing-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #007bff;
+  }
+  
+  .welcome-message {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    color: #555;
+  }
+  
+  .happy-reading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .cta-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .cta-button:hover {
+    background-color: #0056b3;
+  }
+  
+  main {
+    padding: 2rem;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #007bff;
+    color: white;
+    margin-top: 2rem;
+  }
