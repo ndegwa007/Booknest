@@ -1,14 +1,12 @@
+# config/routes.rb
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  # Authentication routes
+  get 'signup', to: 'users#new', as: 'signup' # User registration form
+  post 'signup', to: 'users#create' # Create a new user
+  get 'login', to: 'sessions#new', as: 'login' # Login form
+  post 'login', to: 'sessions#create' # Create a new session (log in)
+  delete 'logout', to: 'sessions#destroy', as: 'logout' # Destroy session (log out)
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
-
-  # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
-  # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
-  # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
-
-  # Defines the root path route ("/")
-  # root "posts#index"
+  # Root route
+  root 'books#index' 
 end
