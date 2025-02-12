@@ -1,5 +1,7 @@
 # config/routes.rb
 Rails.application.routes.draw do
+  get "users/new"
+  get "users/create"
   # Authentication routes
   get 'signup', to: 'users#new', as: 'signup' # User registration form
   post 'signup', to: 'users#create' # Create a new user
