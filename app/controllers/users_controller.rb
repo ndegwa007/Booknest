@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
-  #create a new user
+  # create a new user
   def create
     @user = User.new(user_params)
     if @user.save
@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   end
 
   private
+  # strong parameters for user registration
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation)
   end
