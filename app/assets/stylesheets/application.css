@@ -3,8 +3,11 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    background-color: #e0e0e0;
     color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
   
   .navbar {
@@ -21,6 +24,19 @@ body {
     font-weight: bold;
     color: white;
     text-decoration: none;
+  }
+  
+  .navbar-links .logout-button {
+    background-color: darkred;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    color: white;
+    border: none;
+    cursor: pointer;
+    
+  }
+  .navbar-links .logout-button:hover {
+    background-color: red;
   }
   
   .navbar-links .nav-link {
@@ -49,9 +65,45 @@ body {
     color: #721c24;
   }
   /* Landing Page Styles */
+  @keyframes staticAnimation {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+  }
+  
   .landing-page {
     text-align: center;
     padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #e0e0e0;
+    overflow: hidden;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .landing-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+    animation: staticAnimation 1s steps(10) infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  /* Ensure content stays above the static effect */
+  .landing-page > * {
+    position: relative;
+    z-index: 1;
   }
   
   .landing-page h1 {
@@ -168,8 +220,27 @@ body {
   text-decoration: underline;
 }
 
+/* Books Index Page Styles */
+.book-list {
+  list-style: none;
+  padding: 0;
+}
+
+.book-item {
+  background-color: white;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.book-item strong {
+  color: #007bff;
+}
+
   main {
     padding: 2rem;
+    margin-bottom: 4rem;
   }
   
   footer {
@@ -177,5 +248,8 @@ body {
     padding: 1rem;
     background-color: #007bff;
     color: white;
-    margin-top: 2rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
   }

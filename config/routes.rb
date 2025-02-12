@@ -1,5 +1,6 @@
 # config/routes.rb
 Rails.application.routes.draw do
+  get "books/index"
   get "pages/home"
   get "sessions/new"
   get "sessions/create"

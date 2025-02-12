@@ -1,0 +1,15 @@
+<h1>Available Books</h1>
+
+<% if @books.any? %>
+  <ul class="book-list">
+    <% @books.each do |book| %>
+      <li class="book-item">
+        <strong><%= book.title %></strong> by <%= book.author %> (ISBN: <%= book.isbn %>)
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No books available at the moment.</p>
+<% end %>
+
+<%= link_to 'Back to Home', root_path, class: 'cta-button' %>
