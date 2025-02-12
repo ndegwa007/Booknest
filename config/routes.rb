@@ -15,4 +15,7 @@ Rails.application.routes.draw do
 
   # Root route
   root 'pages#home' # landing page
+
+  # Books resource.
+  resources :books, only: [:index]  # add more actions later
 end

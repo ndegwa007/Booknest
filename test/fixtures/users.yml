@@ -1,9 +1,4 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  email: MyString
-  password_digest: MyString
-
-two:
-  email: MyString
-  password_digest: MyString
+valid_user:
+  email: 'user@example.com'
+  password_digest: <%= ActiveModel::SecurePassword.min_cost ? BCrypt::Password.create('password', cost: BCrypt::Engine::MIN_COST) : BCrypt::Password.create('password') %>
