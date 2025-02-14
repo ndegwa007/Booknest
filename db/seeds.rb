@@ -1,6 +1,14 @@
 # db/seeds.rb
-Book.create!([
-  { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', isbn: '9780743273565' },
-  { title: 'To Kill a Mockingbird', author: 'Harper Lee', isbn: '9780061120084' },
-  { title: '1984', author: 'George Orwell', isbn: '9780451524935' }
-])
+# Clear existing data
+puts "Clearing existing data..."
+Borrowing.destroy_all  # Delete borrowings first since they depend on books
+Book.destroy_all
+
+# Import books from different categories
+puts "Importing new books..."
+["fiction", "mystery", "science"].each do |subject|
+  puts "Importing #{subject} books..."
+  BookImporter.import_from_open_library(subject, 5)
+end
+
+puts "Seed completed successfully!"

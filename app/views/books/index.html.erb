@@ -6,11 +6,17 @@
     <div class="books-grid">
       <% @books.each do |book| %>
         <div class="book-card">
+          <% if book.cover_image_url.present? %>
+            <%= image_tag book.cover_image_url, class: "book-cover", alt: book.title %>
+          <% end %>
           <div class="book-details">
             <h2><%= book.title %></h2>
             <p class="author"><strong>Author:</strong> <%= book.author %></p>
             <p class="isbn"><strong>ISBN:</strong> <%= book.isbn %></p>
             <p>Status: <%= book.status&.capitalize || 'Available' %></p>
+            <% if book.description.present? %>
+              <p class="description"><%= truncate(book.description, length: 150) %></p>
+            <% end %>
           </div>
           <% if book.available? %>
             <div class="book-actions">
