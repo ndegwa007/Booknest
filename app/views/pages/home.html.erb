@@ -14,6 +14,7 @@
       <%= link_to 'Log In', login_path, class: 'cta-button' %>
     <% else %>
       <%= link_to 'Browse Books', books_path, class: 'cta-button' %>
+      <%= link_to 'My Borrowed Books', borrowed_books_user_path(current_user), class: 'cta-button' %>
     <% end %>
   </div>
 </div>

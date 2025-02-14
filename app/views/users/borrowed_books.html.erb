@@ -6,7 +6,10 @@
       <li>
         <strong><%= book.title %></strong> by <%= book.author %>
         (Due by: <%= book.borrowings.find_by(user: current_user).due_date.strftime('%Y-%m-%d') %>)
-        <%= link_to 'Return', return_book_user_path(current_user, id: book.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= button_to 'Return', return_book_user_path(current_user, book_id: book.id), 
+            method: :delete,
+            form: { data: { turbo_confirm: 'Are you sure?' } },
+            class: 'cta-button return-button' %>
       </li>
     <% end %>
   </ul>
