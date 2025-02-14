@@ -10,14 +10,15 @@
             <h2><%= book.title %></h2>
             <p class="author"><strong>Author:</strong> <%= book.author %></p>
             <p class="isbn"><strong>ISBN:</strong> <%= book.isbn %></p>
+            <p>Status: <%= book.status&.capitalize || 'Available' %></p>
           </div>
-          <% if current_user && !current_user.borrowed_books.include?(book) %>
+          <% if book.available? %>
             <div class="book-actions">
-              <%= button_to 'Borrow', borrow_book_path(book), method: :post, class: 'borrow-button' %>
+              <%= button_to 'Borrow', book_borrowings_path(book), method: :post, class: 'borrow-button' %>
             </div>
           <% else %>
             <div class="book-actions">
-              <p class="borrowed-message">Already Borrowed</p>
+              <span class="unavailable-badge">Currently Unavailable</span>
             </div>
           <% end %>
         </div>

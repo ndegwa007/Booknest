@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   # Books routes
   resources :books, only: [:index]  do # add more actions later
     post 'borrow', on: :member
+    resources :borrowings, only: [:create]
   end
 
   # Users routes
@@ -29,4 +30,6 @@ Rails.application.routes.draw do
       get 'borrowed_books'
     end
   end
+
+  resources :borrowings, only: [:destroy]
 end
