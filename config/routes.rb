@@ -1,5 +1,6 @@
 # config/routes.rb
 Rails.application.routes.draw do
+  get "books/index"
   get "pages/home"
   get "sessions/new"
   get "sessions/create"
@@ -16,6 +17,14 @@ Rails.application.routes.draw do
   # Root route
   root 'pages#home' # landing page
 
-  # Books resource.
-  resources :books, only: [:index]  # add more actions later
+  # Books routes
+  resources :books, only: [:index]  do # add more actions later
+    post 'borrow', on: :member
+  end
+
+  # Users routes
+  resources :users, only: [] do
+    get 'borrowed_books', on: :member, as: 'borrowed_books'
+    delete 'return_book/:id', to: 'users#return_book', as: 'return_book', on: :member
+  end
 end

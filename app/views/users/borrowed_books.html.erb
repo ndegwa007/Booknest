@@ -1,0 +1,17 @@
+<h1>Your Borrowed Books</h1>
+
+<% if @borrowed_books.any? %>
+  <ul>
+    <% @borrowed_books.each do |book| %>
+      <li>
+        <strong><%= book.title %></strong> by <%= book.author %>
+        (Due by: <%= book.borrowings.find_by(user: current_user).due_date.strftime('%Y-%m-%d') %>)
+        <%= link_to 'Return', return_book_user_path(current_user, id: book.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>You have no borrowed books.</p>
+<% end %>
+
+<%= link_to 'Back to Books', books_path, class: 'cta-button' %>

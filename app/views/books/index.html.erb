@@ -1,0 +1,31 @@
+<!-- app/views/books/index.html.erb -->
+<div class="books-container">
+  <h1>Available Books</h1>
+
+  <% if @books.any? %>
+    <div class="books-grid">
+      <% @books.each do |book| %>
+        <div class="book-card">
+          <div class="book-details">
+            <h2><%= book.title %></h2>
+            <p class="author"><strong>Author:</strong> <%= book.author %></p>
+            <p class="isbn"><strong>ISBN:</strong> <%= book.isbn %></p>
+          </div>
+          <% if current_user && !current_user.borrowed_books.include?(book) %>
+            <div class="book-actions">
+              <%= button_to 'Borrow', borrow_book_path(book), method: :post, class: 'borrow-button' %>
+            </div>
+          <% else %>
+            <div class="book-actions">
+              <p class="borrowed-message">Already Borrowed</p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p class="no-books">No books available at the moment.</p>
+  <% end %>
+
+  <%= link_to 'Back to Home', root_path, class: 'cta-button' %>
+</div>
