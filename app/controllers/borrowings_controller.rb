@@ -9,7 +9,7 @@ class BorrowingsController < ApplicationController
       
       if @borrowing.save
         @book.mark_as_borrowed!
-        redirect_to borrowed_books_path, notice: 'Book was successfully borrowed.'
+        redirect_to borrowed_books_user_path(current_user), notice: 'Book was successfully borrowed.'
       else
         redirect_to @book, alert: 'Unable to borrow this book.'
       end
@@ -24,9 +24,9 @@ class BorrowingsController < ApplicationController
     
     if @borrowing.destroy
       @book.mark_as_available!
-      redirect_to borrowed_books_path, notice: 'Book was successfully returned.'
+      redirect_to borrowed_books_user_path(current_user), notice: 'Book was successfully returned.'
     else
-      redirect_to borrowed_books_path, alert: 'Unable to return this book.'
+      redirect_to borrowed_books_user_path(current_user), alert: 'Unable to return this book.'
     end
   end
 end 

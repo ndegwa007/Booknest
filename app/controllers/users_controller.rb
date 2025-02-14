@@ -26,15 +26,14 @@ class UsersController < ApplicationController
 
   def return_book
     @book = Book.find(params[:book_id])
-    borrowing = current_user.borrowings.find_by(book: @book)
+    @borrowing = current_user.borrowings.find_by(book: @book)
     
-    if borrowing&.destroy
-      flash[:notice] = "Book successfully returned"
+    if @borrowing&.destroy
+      @book.mark_as_available! # This will update the book's status to 'available'
+      redirect_to borrowed_books_user_path(current_user), notice: 'Book has been returned successfully.'
     else
-      flash[:alert] = "Could not return the book"
+      redirect_to borrowed_books_user_path(current_user), alert: 'Unable to return the book.'
     end
-    
-    redirect_to borrowed_books_user_path(current_user)
   end
 
   private
