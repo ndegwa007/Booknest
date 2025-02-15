@@ -1,24 +1,66 @@
-# README
+# Book Lending Library
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to the **Book Lending Library**, a Ruby on Rails application that allows users to sign up, log in, and borrow books. Each book has details such as a title, description, author, availability status, and a unique ISBN number.
 
-Things you may want to cover:
+## Features
+- **User Authentication**: Secure signups and logins using Rails 8 authentication.
+- **Book Management**: View books with details like title, description, author, and availability status.
+- **Borrowing System**: Users can check if a book is available and borrow it.
+- **Database**: Uses SQLite (Rails 8 default).
 
-* Ruby version
+## Installation and Setup
 
-* System dependencies
+Follow these steps to get the application running locally:
 
-* Configuration
+### Prerequisites
+Make sure you have the following installed:
+- Ruby (latest compatible version with Rails 8)
+- Rails 8
+- Bundler
+- SQLite3
 
-* Database creation
+### Steps to Run the Application
+1. **Clone the repository**
+   ```sh
+   git clone https://github.com/yourusername/book-lending-library.git
+   cd book-lending-library
+   ```
 
-* Database initialization
+2. **Install dependencies**
+   ```sh
+   bundle install
+   ```
 
-* How to run the test suite
+3. **Set up the database**
+   ```sh
+   rails db:migrate
+   rails db:seed  # Seeds the database with book data
+   ```
 
-* Services (job queues, cache servers, search engines, etc.)
+4. **Start the Rails server**
+   ```sh
+   rails server
+   ```
 
-* Deployment instructions
+5. **Access the application**
+   Open your browser and go to: `http://localhost:3000`
 
-* ...
+## Usage
+- **Sign up or log in** to access the library.
+- Browse the available books.
+- Check book availability.
+- Borrow books and return them when done.
+
+## Contributing
+Contributions are welcome! Please follow these steps:
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes and commit them (`git commit -m 'Add new feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Open a Pull Request.
+
+## License
+This project is open-source and available under the [MIT License](LICENSE).
+
+## Contact
+For any issues or suggestions, feel free to open an issue or reach out to [Your Name](mailto:your.email@example.com).
