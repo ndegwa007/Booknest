@@ -63,4 +63,4 @@ Contributions are welcome! Please follow these steps:
 This project is open-source and available under the [MIT License](LICENSE).
 
 ## Contact
-For any issues or suggestions, feel free to open an issue or reach out to [Your Name](mailto:ndegwa8781@gmail.com).
+For any issues or suggestions, feel free to open an issue or reach out to [Martin Ndegwa](mailto:ndegwa8781@gmail.com).
