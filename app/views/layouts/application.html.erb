@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BookNest</title>
+  <title>Booknest</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
@@ -12,7 +12,7 @@
   <nav>
     <div class="navbar">
       <div class="navbar-brand">
-        <%= link_to 'BookNest', root_path, class: 'logo' %>
+        <%= link_to 'Booknest', root_path, class: 'logo' %>
       </div>
       <div class="navbar-links">
         <% if current_user %>
@@ -39,7 +39,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; <%= Time.now.year %> BookNest. All rights reserved.</p>
+    <p>&copy; <%= Time.now.year %> Booknest. All rights reserved.</p>
   </footer>
 </body>
 </html>
