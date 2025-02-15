@@ -22,7 +22,7 @@ Make sure you have the following installed:
 ### Steps to Run the Application
 1. **Clone the repository**
    ```sh
-   git clone https://github.com/yourusername/book-lending-library.git
+   git clone https://github.com/ndegwa007/Booknest.git
    cd Booknest
    ```
 
