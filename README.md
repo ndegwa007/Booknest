@@ -1,6 +1,6 @@
 # Book Lending Library
 
-Welcome to the **Book Lending Library**, a Ruby on Rails application that allows users to sign up, log in, and borrow books. Each book has details such as a title, description, author, availability status, and a unique ISBN number.
+Welcome to the **Booknest**, a Ruby on Rails application that allows users to sign up, log in, and borrow books. Each book has details such as a title, description, author, availability status, and a unique ISBN number.
 
 ## Features
 - **User Authentication**: Secure signups and logins using Rails 8 authentication.
@@ -63,4 +63,4 @@ Contributions are welcome! Please follow these steps:
 This project is open-source and available under the [MIT License](LICENSE).
 
 ## Contact
-For any issues or suggestions, feel free to open an issue or reach out to [Your Name](mailto:your.email@example.com).
+For any issues or suggestions, feel free to open an issue or reach out to [Your Name](mailto:ndegwa8781@gmail.com).
