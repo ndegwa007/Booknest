@@ -1,4 +1,5 @@
-# Book Lending Library
+# Booknest
+### A book lending library
 
 Welcome to the **Booknest**, a Ruby on Rails application that allows users to sign up, log in, and borrow books. Each book has details such as a title, description, author, availability status, and a unique ISBN number.
 
