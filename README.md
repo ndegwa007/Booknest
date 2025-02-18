@@ -46,6 +46,9 @@ Make sure you have the following installed:
 5. **Access the application**
    Open your browser and go to: `http://localhost:3000`
 
+6. **Running tests**
+   ``` rspec ```
+
 ## Usage
 - **Sign up or log in** to access the library.
 - Browse the available books.
