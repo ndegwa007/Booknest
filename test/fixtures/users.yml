@@ -1,4 +1,0 @@
-
-valid_user:
-  email: 'user@example.com'
-  password_digest: <%= ActiveModel::SecurePassword.min_cost ? BCrypt::Password.create('password', cost: BCrypt::Engine::MIN_COST) : BCrypt::Password.create('password') %>

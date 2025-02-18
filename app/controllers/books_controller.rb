@@ -12,9 +12,8 @@ class BooksController < ApplicationController
 
     if borrowing.save
       redirect_to borrowed_books_user_path(current_user), notice: 'Book borrowed successfully'
-    
     else
-      redirect_to book_path, alert: borrowing.errors.full_messages.join(', ')
+      redirect_to books_path, alert: borrowing.errors.full_messages.join(', ')
     end
   end
 end

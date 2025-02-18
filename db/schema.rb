@@ -17,7 +17,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_14_095114) do
     t.string "isbn"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "status"
+    t.string "status", default: "available"
     t.string "cover_image_url"
     t.text "description"
   end
