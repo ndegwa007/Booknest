@@ -40,7 +40,7 @@ gem "thruster", require: false
 # handle non-GET requests
 gem "rails-ujs"
 
-gem "devise"
+#gem "devise"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -54,6 +54,9 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  # rspec
+  gem "rspec-rails"
 end
 
 group :development do
@@ -65,4 +68,7 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem "faker"
+  gem "factory_bot_rails"
+  gem "rails-controller-testing"
 end
