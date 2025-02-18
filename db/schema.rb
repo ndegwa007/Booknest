@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_02_14_095114) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_18_111516) do
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.string "author"
@@ -37,6 +37,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_14_095114) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index "lower(email)", name: "index_users_on_lower_email", unique: true
   end
 
   add_foreign_key "borrowings", "books"
