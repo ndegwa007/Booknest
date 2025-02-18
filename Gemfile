@@ -72,3 +72,5 @@ group :test do
   gem "factory_bot_rails"
   gem "rails-controller-testing"
 end
+
+gem "shoulda-matchers", "~> 6.4"
