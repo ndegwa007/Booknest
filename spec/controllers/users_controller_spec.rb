@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-#GET #new
+# GET #new
 # Ensures the registration form is displayed.
-#POST #create
+# POST #create
 # Successfully creates a user with valid parameters.
 # Fails when given invalid parameters.
-#GET #borrowed_books
+# GET #borrowed_books
 # Fetches borrowed books that belong to the authenticated user.
-#DELETE #return_book
+# DELETE #return_book
 # Successfully returns a borrowed book and updates the status.
-#Fails gracefully if returning is unsuccessful.
+# Fails gracefully if returning is unsuccessful.
 
 RSpec.describe UsersController, type: :controller do
   let(:user) { create(:user, password: "secure123", password_confirmation: "secure123") }

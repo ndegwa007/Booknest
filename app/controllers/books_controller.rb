@@ -1,6 +1,5 @@
 class BooksController < ApplicationController
-
-  before_action :authenticate_user!, only: [:borrow]
+  before_action :authenticate_user!, only: [ :borrow ]
 
   def index
     @books = Book.all # get all books from the database
@@ -11,9 +10,9 @@ class BooksController < ApplicationController
     borrowing  = current_user.borrowings.new(book: @book)
 
     if borrowing.save
-      redirect_to borrowed_books_user_path(current_user), notice: 'Book borrowed successfully'
+      redirect_to borrowed_books_user_path(current_user), notice: "Book borrowed successfully"
     else
-      redirect_to books_path, alert: borrowing.errors.full_messages.join(', ')
+      redirect_to books_path, alert: borrowing.errors.full_messages.join(", ")
     end
   end
 end

@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
     # Custom method to check if a user is logged in
     def authenticate_user!
       unless current_user
-        redirect_to login_path, alert: 'You need to log in to access this page.'
+        redirect_to login_path, alert: "You need to log in to access this page."
       end
     end
 

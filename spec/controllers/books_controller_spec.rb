@@ -15,7 +15,7 @@ RSpec.describe BooksController, type: :controller do
       book2 = create(:book)
 
       get :index
-      expect(assigns(:books)).to match_array([book1, book2])
+      expect(assigns(:books)).to match_array([ book1, book2 ])
     end
 
     it "renders the index template" do
@@ -47,7 +47,7 @@ RSpec.describe BooksController, type: :controller do
 
       it "redirects with an error if borrowing fails" do
         allow_any_instance_of(Borrowing).to receive(:save).and_return(false) # Simulate failure
-        allow_any_instance_of(Borrowing).to receive_message_chain(:errors, :full_messages).and_return(["Something went wrong"])
+        allow_any_instance_of(Borrowing).to receive_message_chain(:errors, :full_messages).and_return([ "Something went wrong" ])
 
         post :borrow, params: { id: book.id }
         expect(response).to redirect_to(books_path)

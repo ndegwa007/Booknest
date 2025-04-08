@@ -1,19 +1,19 @@
 
 
-#Associations
+# Associations
 
-#Ensures a user has many borrowings.
-#Ensures a user has many borrowed books through borrowings.
+# Ensures a user has many borrowings.
+# Ensures a user has many borrowed books through borrowings.
 
-#Validations
+# Validations
 
-#Ensures email is present.
-#Ensures email is unique (case insensitive).
+# Ensures email is present.
+# Ensures email is unique (case insensitive).
 
-#Password Security
+# Password Security
 
-#Verifies has_secure_password encrypts the password.
-#Ensures only the correct password authenticates the user.
+# Verifies has_secure_password encrypts the password.
+# Ensures only the correct password authenticates the user.
 
 require 'rails_helper'
 
@@ -36,5 +36,3 @@ RSpec.describe User, type: :model do
     end
   end
 end
-
-
