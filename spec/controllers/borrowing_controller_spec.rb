@@ -35,5 +35,3 @@ RSpec.describe BorrowingsController, type: :controller do
     end
   end
 end
-
-

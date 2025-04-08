@@ -12,7 +12,7 @@ RSpec.describe Book, type: :model do
     it { should validate_presence_of(:isbn) }
     it { should validate_uniqueness_of(:isbn) }
     it { should validate_presence_of(:status) }
-    it { should validate_inclusion_of(:status).in_array(['available', 'borrowed']) }
+    it { should validate_inclusion_of(:status).in_array([ 'available', 'borrowed' ]) }
   end
 
   describe "#available?" do

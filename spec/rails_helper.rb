@@ -75,5 +75,4 @@ RSpec.configure do |config|
       with.library :active_model
     end
   end
-  
 end

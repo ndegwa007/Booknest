@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Borrowing, type: :model do
   let(:user) { User.create!(email: "user@example.com", password: "password123") }
   let(:book) { Book.create!(title: "Sample Book", author: "John Doe", isbn: "1234567890", status: "available") }
-  
+
   subject { described_class.new(user: user, book: book) }
 
   describe "associations" do

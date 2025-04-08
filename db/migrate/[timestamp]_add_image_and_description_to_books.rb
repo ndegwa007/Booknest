@@ -3,4 +3,4 @@ class AddImageAndDescriptionToBooks < ActiveRecord::Migration[8.0]
     add_column :books, :cover_image_url, :string
     add_column :books, :description, :text
   end
-end 
+end

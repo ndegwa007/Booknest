@@ -6,7 +6,7 @@ Book.destroy_all
 
 # Import books from different categories
 puts "Importing new books..."
-["fiction", "mystery", "science"].each do |subject|
+[ "fiction", "mystery", "science" ].each do |subject|
   puts "Importing #{subject} books..."
   BookImporter.import_from_open_library(subject, 5)
 end
